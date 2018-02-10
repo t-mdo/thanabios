@@ -95,6 +95,20 @@
     ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "eslint-config-airbnb",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest": true
+    },
+    "rules": {
+      "react/jsx-filename-extension": 0,
+      "react/forbid-prop-types": 0,
+      "no-return-assign": 0,
+      "import/prefer-default-export": 0,
+      "react/no-unused-prop-types": 0,
+      "no-underscore-dangle": 0,
+      "no-confusing-arrow": 0
+    }
   }
 }
