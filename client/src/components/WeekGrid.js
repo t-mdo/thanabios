@@ -29,8 +29,8 @@ export default styled(WeekGrid)`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 30vh;
-  margin-bottom: 20vh;
+  margin-top: 5;
+  margin-bottom: 10vh;
   width: 75%;
   height: 80%;
 `;

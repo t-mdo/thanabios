@@ -20,7 +20,7 @@ export default styled(Wrapper)`
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  width: 50%;
+  width: 40%;
   min-width: 300px;
   min-height: 240px;
   margin: 0 auto;
