@@ -8,7 +8,7 @@ const Square = styled.div`
   border-color: #282828;
   border-width: 1px;
   border-radius: 25%;
-  background: ${props => props.filled ? '#9d9d9d' : 'transparent'};
+  background: ${props => props.filled ? '#b0b0b0' : 'transparent'};
 `;
 
 Square.defaultProps = {
