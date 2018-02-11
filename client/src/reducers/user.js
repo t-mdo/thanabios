@@ -5,8 +5,9 @@ import { USER_UPDATE } from '../actions/user';
 
 const birthdate = (state = moment(), action) => {
   switch (action.type) {
-    case USER_UPDATE:
+    case USER_UPDATE: {
       return action.user.birthdate;
+    }
     default:
       return state;
   }

@@ -58,7 +58,7 @@ const weeksPassed = (state = 0, action) => {
 const weeksAhead = (state = 0, action) => {
   switch (action.type) {
     case LIFE_EXPECTANCY_FETCH_SUCCESS:
-      return action.birthdate.add(action.lifeExpectancy, 'week').diff(action.now, 'week') - 1;
+      return action.birthdate.clone().add(action.lifeExpectancy, 'week').diff(action.now, 'week') - 1;
     default:
       return state;
   }

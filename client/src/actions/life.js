@@ -39,5 +39,6 @@ export const setupLife = user => (dispatch) => {
     })
     .catch((err) => {
       dispatch(lifeExpectancyFetchFailure(err));
+      dispatch(lifeSettingUp(false));
     });
 };
