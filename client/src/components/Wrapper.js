@@ -12,17 +12,15 @@ Wrapper.defaultProps = {};
 
 Wrapper.propTypes = {
   className: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default styled(Wrapper)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
-  width: 40%;
-  min-width: 300px;
-  min-height: 240px;
+  height: ${props => props.height}%;
+  width: ${props => props.width}%;
   margin: 0 auto;
   border-radius: 4px;
   background-color: #ffffff;
