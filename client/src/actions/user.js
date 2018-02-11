@@ -1,3 +1,5 @@
+import { setupLife } from './life';
+
 export const USER_UPDATE = 'USER_UPDATE';
 
 export const userUpdate = user => ({
@@ -7,4 +9,5 @@ export const userUpdate = user => ({
 
 export const setupUser = user => (dispatch) => {
   dispatch(userUpdate(user));
+  dispatch(setupLife(user));
 };
