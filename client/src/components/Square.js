@@ -6,7 +6,7 @@ const Square = styled.div`
   height: ${props => props.size}px;
   border-style: solid;
   border-color: #282828;
-  border-width: 2px;
+  border-width: 1px;
   border-radius: 25%;
   background: ${props => props.filled ? '#9d9d9d' : 'transparent'};
 `;

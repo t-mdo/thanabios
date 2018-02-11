@@ -19,11 +19,11 @@ export default styled(Wrapper)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80%;
-  width: 60%;
+  height: 100%;
+  width: 50%;
   min-width: 300px;
   min-height: 240px;
-  margin: 5% auto;
+  margin: 0 auto;
   border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 8px 17px 0 rgba(0,0,0,.2), 0 6px 20px 0 rgba(0,0,0,.19);

@@ -25,4 +25,6 @@ export default styled(WeekLine)`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-top: 5px;
+  margin-bottom: 5px;
 `;
