@@ -7,10 +7,10 @@ import DatePickerStock from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const DatePicker = styled(DatePickerStock)`
-  font-size: 13px;
+  font-size: 30px;
   border-radius: 4px;
   border: 1px solid #aeaeae;
-  padding: 6px 10px 5px;
+  padding: 12px 20px 10px;
   text-align: center;
 
   &:focus {
@@ -19,10 +19,12 @@ const DatePicker = styled(DatePickerStock)`
   }
 `;
 
-const InitialForm = ({ className }) => (
+const InitialForm = ({ className, user, handleFormChange }) => (
   <div className={className}>
     <DatePicker
       dateFormat="YYYY/MM/DD"
+      selected={user.birthdate}
+      onChange={handleFormChange}
     />
   </div>
 );
@@ -31,6 +33,8 @@ InitialForm.defaultProps = {};
 
 InitialForm.propTypes = {
   className: PropTypes.string.isRequired,
+  user: PropTypes.shape({ birthdate: PropTypes.object }).isRequired,
+  handleFormChange: PropTypes.func.isRequired,
 };
 
 export default styled(InitialForm)`
