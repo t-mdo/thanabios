@@ -4,10 +4,24 @@ import styled from 'styled-components';
 
 import _ from 'lodash';
 
+import { SquareLoader } from 'halogenium';
+
 import WeekLine from './WeekLine';
 
-const WeekGrid = ({ className, weeks, lineLength }) => {
+const Loader = styled(SquareLoader)`
+  margin: 0 auto;
+`;
+
+const WeekGrid = ({ className, weeks, lineLength, lifeSettingUp }) => {
   const lines = _.chunk(weeks, lineLength).map(line => <WeekLine key={_.uniqueId('line:')} weeks={line} />);
+
+  if (lifeSettingUp) {
+    return (
+      <div className={className}>
+        <Loader color="#989898" loading={lifeSettingUp} />
+      </div>
+    );
+  }
 
   return (
     <div className={className}>
@@ -22,6 +36,7 @@ WeekGrid.propTypes = {
   className: PropTypes.string.isRequired,
   weeks: PropTypes.array.isRequired,
   lineLength: PropTypes.number.isRequired,
+  lifeSettingUp: PropTypes.bool.isRequired,
 };
 
 export default styled(WeekGrid)`
@@ -29,7 +44,6 @@ export default styled(WeekGrid)`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 5;
   margin-bottom: 10vh;
   width: 75%;
   height: 80%;
