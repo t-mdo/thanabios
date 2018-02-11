@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import moment from 'moment';
 
-import { UPDATE_USER } from '../actions/user';
+import { USER_UPDATE } from '../actions/user';
 
 const birthdate = (state = moment(), action) => {
   switch (action.type) {
-    case UPDATE_USER:
+    case USER_UPDATE:
       return action.user.birthdate;
     default:
       return state;
