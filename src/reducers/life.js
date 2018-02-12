@@ -37,6 +37,17 @@ const failed = (state = false, action) => {
   }
 };
 
+const failedError = (state = {}, action) => {
+  switch (action.type) {
+    case LIFE_EXPECTANCY_FETCH_REQUEST:
+      return {};
+    case LIFE_EXPECTANCY_FETCH_FAILURE:
+      return action.err;
+    default:
+      return state;
+  }
+};
+
 const lifeExpectancy = (state = 0, action) => {
   switch (action.type) {
     case LIFE_EXPECTANCY_FETCH_SUCCESS:
@@ -68,6 +79,7 @@ export const life = combineReducers({
   settingUp,
   requesting,
   failed,
+  failedError,
   lifeExpectancy,
   weeksPassed,
   weeksAhead,

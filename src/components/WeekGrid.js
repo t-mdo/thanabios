@@ -37,6 +37,8 @@ WeekGrid.propTypes = {
   weeks: PropTypes.array.isRequired,
   lineLength: PropTypes.number.isRequired,
   lifeSettingUp: PropTypes.bool.isRequired,
+  lifeRequestFailed: PropTypes.bool.isRequired,
+  lifeRequestError: PropTypes.object.isRequired,
 };
 
 export default styled(WeekGrid)`
