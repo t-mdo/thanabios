@@ -39,6 +39,7 @@
     "prop-types": "^15.6.0",
     "raf": "3.4.0",
     "react": "^16.2.0",
+    "react-awesome-button": "^2.1.0",
     "react-datepicker": "^1.1.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
@@ -116,7 +117,8 @@
       "react/no-unused-prop-types": 0,
       "no-underscore-dangle": 0,
       "no-confusing-arrow": 0,
-      "object-curly-newline": 0
+      "object-curly-newline": 0,
+      "max-len": 0
     }
   }
 }

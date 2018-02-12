@@ -32,7 +32,7 @@ export const lifeExpectancyFetchSuccess = (birthdate, lifeExpectancy) => ({
 export const setupLife = user => (dispatch) => {
   dispatch(lifeSettingUp(true));
   dispatch(lifeExpectancyFetchRequest());
-  axios.get(`${API_URL}/life-expectancy/total/male/France/${user.birthdate.format('YYYY-MM-DD')}`)
+  axios.get(`${API_URL}/life-expectancy/total/${user.gender}/${user.country}/${user.birthdate.format('YYYY-MM-DD')}`)
     .then((res) => {
       dispatch(lifeExpectancyFetchSuccess(user.birthdate, moment.duration(res.data.total_life_expectancy, 'years')));
       dispatch(lifeSettingUp(false));

@@ -18,7 +18,7 @@ Wrapper.propTypes = {
 export default styled(Wrapper)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   height: ${props => props.height}%;
   width: ${props => props.width}%;
   margin: 0 auto;
