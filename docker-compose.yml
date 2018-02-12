@@ -7,5 +7,5 @@ services:
     hostname: lifeinweeks
     restart: unless-stopped
     network_mode: "host"
-    ports:
-      - "6000:8888"
+    environment:
+      - PORT=6000
