@@ -1,0 +1,11 @@
+version: "3"
+services:
+  lifeinweeks:
+    build: .
+    image: lifeinweeks
+    container_name: lifeinweeks
+    hostname: lifeinweeks
+    restart: unless-stopped
+    network_mode: "host"
+    ports:
+      - 6000:8888
