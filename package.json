@@ -62,7 +62,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "./scripts/start.sh",
-    "startDev": "node scripts/start.js",
+    "startDev": "node scripts/startDev.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
