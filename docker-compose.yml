@@ -8,4 +8,4 @@ services:
     restart: unless-stopped
     network_mode: "host"
     environment:
-      - PORT=6000
+      - PORT=6001
