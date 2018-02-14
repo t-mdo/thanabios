@@ -4,27 +4,24 @@ import { connect } from 'react-redux';
 
 import _ from 'lodash';
 
-import Wrapper from '../components/Wrapper';
-import WeekGrid from '../components/WeekGrid';
-import Title from '../components/Title';
+import MainPage from '../components/MainPage';
 
-const MainPage = ({ lifeSettingUp, lifeRequestFailed, lifeRequestError, lifeExpectancy, weeksPassed }) => {
+const MainPageContainer = ({ lifeSettingUp, lifeRequestFailed, lifeRequestError, lifeExpectancy, weeksPassed }) => {
   const weeks = _.times(lifeExpectancy).map(i => ({ id: _.uniqueId('week:'), passed: (i <= weeksPassed) }));
+
   return (
-    <Wrapper height={100} width={40}>
-      <Title>Your Life</Title>
-      <WeekGrid
-        lifeSettingUp={lifeSettingUp}
-        lifeRequestFailed={lifeRequestFailed}
-        lifeRequestError={lifeRequestError}
-        weeks={weeks}
-        lineLength={52}
-      />
-    </Wrapper>
+    <MainPage
+      lifeSettingUp={lifeSettingUp}
+      lifeRequestFailed={lifeRequestFailed}
+      lifeRequestError={lifeRequestError}
+      lifeExpectancy={lifeExpectancy}
+      weeksPassed={weeksPassed}
+      weeks={weeks}
+    />
   );
 };
 
-MainPage.propTypes = {
+MainPageContainer.propTypes = {
   lifeExpectancy: PropTypes.number.isRequired,
   weeksPassed: PropTypes.number.isRequired,
   lifeSettingUp: PropTypes.bool.isRequired,
@@ -41,4 +38,4 @@ const mapStateToProps = state => ({
   lifeRequestError: state.life.failedError,
 });
 
-export default connect(mapStateToProps)(MainPage);
+export default connect(mapStateToProps)(MainPageContainer);
