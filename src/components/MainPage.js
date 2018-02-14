@@ -6,7 +6,7 @@ import WeekGrid from '../components/WeekGrid';
 import Title from '../components/Title';
 
 const MainPage = ({ lifeSettingUp, lifeRequestFailed, lifeRequestError, weeks }) => (
-  <Wrapper height={100} width={40}>
+  <Wrapper margin="0 auto" height={100} width={40}>
     <Title>Your Life</Title>
     <WeekGrid
       lifeSettingUp={lifeSettingUp}
