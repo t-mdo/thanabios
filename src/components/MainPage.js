@@ -1,21 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import Wrapper from '../components/Wrapper';
-import WeekGrid from '../components/WeekGrid';
-import Title from '../components/Title';
+import Life from './Life';
+
+const MainPageContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
 
 const MainPage = ({ lifeSettingUp, lifeRequestFailed, lifeRequestError, weeks }) => (
-  <Wrapper margin="0 auto" height={100} width={40}>
-    <Title>Your Life</Title>
-    <WeekGrid
+  <MainPageContainer>
+    <Life
       lifeSettingUp={lifeSettingUp}
       lifeRequestFailed={lifeRequestFailed}
       lifeRequestError={lifeRequestError}
       weeks={weeks}
       lineLength={52}
     />
-  </Wrapper>
+  </MainPageContainer>
 );
 
 MainPage.propTypes = {
