@@ -46,7 +46,6 @@ export default styled(WeekGrid)`
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  margin-bottom: 10vh;
   width: 75%;
   height: 80%;
 `;

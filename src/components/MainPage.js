@@ -7,7 +7,7 @@ import Life from './Life';
 const MainPageContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   top: 0;
   left: 0;
   width: 100%;
