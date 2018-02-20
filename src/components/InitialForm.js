@@ -2,31 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import DatePickerStock from 'react-datepicker';
 import { AwesomeButton } from 'react-awesome-button';
 
-import 'react-datepicker/dist/react-datepicker.css';
 import 'react-awesome-button/dist/styles.css';
 
 import CountrySelect from './CountrySelect';
 import GenderSelect from './GenderSelect';
-
-const DatePicker = styled(DatePickerStock)`
-  font-size: 25px;
-  border-radius: 4px;
-  border: 1px solid #aeaeae;
-  padding: 12px 20px 10px;
-  text-align: center;
-
-  &:focus {
-    outline: none;
-    box-shadow: inset 0 2px 2px #e9e9e9, 0 0 10px 0 rgba(73, 107, 125, 0.3);
-  }
-`;
-
-const DatePickerContainer = styled.div`
-  margin: 0 auto;
-`;
+import BirthdatePicker from './BirthdatePicker';
 
 const Button = styled(AwesomeButton)`
   font-family: sans-serif !important;
@@ -39,13 +21,7 @@ const InitialForm = ({ className, user, handleGenderChange, handleCountryChange,
   <div className={className}>
     <GenderSelect value={user.gender} onChange={handleGenderChange} />
     <CountrySelect value={user.country} onChange={handleCountryChange} />
-    <DatePickerContainer>
-      <DatePicker
-        dateFormat="YYYY/MM/DD"
-        selected={user.birthdate}
-        onChange={handleDateChange}
-      />
-    </DatePickerContainer>
+    <BirthdatePicker value={user.birthdate} onChange={handleDateChange} />
     <Button action={handleSubmit} type="secondary" size="large">Check It Out</Button>
   </div>
 );

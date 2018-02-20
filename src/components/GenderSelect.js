@@ -9,6 +9,7 @@ const Select = styled.select`
   padding: 12px 20px 10px;
   margin: 0 auto;
   text-align: center;
+  text-align-last: center;
 
   &:focus {
     outline: none;
@@ -18,7 +19,7 @@ const Select = styled.select`
 
 const GenderSelect = ({ onChange, value }) => (
   <Select value={value} onChange={onChange}>
-    <option value="" />
+    <option value="" disabled>Gender</option>
     <option value="female">Female</option>
     <option value="male">Male</option>
   </Select>

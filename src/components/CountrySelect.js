@@ -9,6 +9,7 @@ const Select = styled.select`
   padding: 12px 20px 10px;
   margin: 0 auto;
   text-align: center;
+  text-align-last: center;
 
   &:focus {
     outline: none;
@@ -18,7 +19,7 @@ const Select = styled.select`
 
 const CountrySelect = ({ className, onChange, value }) => (
   <Select value={value} onChange={onChange} className={className}>
-    <option value="" />
+    <option value="" disabled>Country</option>
     <option value="Afghanistan">Afghanistan</option>
     <option value="Åland Islands">Åland Islands</option>
     <option value="Albania">Albania</option>
