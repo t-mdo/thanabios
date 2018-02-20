@@ -44,7 +44,7 @@ WeekGrid.propTypes = {
 export default styled(WeekGrid)`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 0 auto;
   width: 75%;
   height: 80%;
