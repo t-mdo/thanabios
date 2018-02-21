@@ -17,7 +17,15 @@ const InitialFormPageContainer = ({ user, setupUser, setupLife, history }) => {
 
   const handleGenderChange = gender => setupUser({ ...user, gender: gender.target.value });
 
-  const handleSubmit = () => { setupLife(user); history.push('/life'); };
+  const handleSubmit = () => {
+    if (user.birthdate === null
+      || user.gender === ''
+      || user.country === '') {
+      return;
+    }
+    setupLife(user);
+    history.push('/life');
+  };
 
   return (
     <InitialFormPage
