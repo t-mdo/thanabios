@@ -16,7 +16,7 @@ const WrapperContainer = styled.div`
 
 const InitialFormPage = ({ user, handleCountryChange, handleGenderChange, handleDateChange, handleSubmit }) => (
   <WrapperContainer>
-    <Wrapper height={60} width={60} >
+    <Wrapper margin="0 auto" height={60} width={60} >
       <Title>You</Title>
       <InitialForm
         user={user}

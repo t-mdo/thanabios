@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import MainPage from './MainPage';
+import MainPageContainer from './MainPageContainer';
 import InitialFormPageContainer from './InitialFormPageContainer';
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={InitialFormPageContainer} />
-            <Route exact path="/life" component={MainPage} />
+            <Route exact path="/life" component={MainPageContainer} />
           </Switch>
         </Router>
       </div>
