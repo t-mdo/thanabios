@@ -24,5 +24,5 @@ WeekLine.propTypes = {
 export default styled(WeekLine)`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
