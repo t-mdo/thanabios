@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 
 import _ from 'lodash';
 
-import { SquareLoader } from 'halogenium';
+import { ScaleLoader } from 'halogenium';
 
 import WeekLine from './WeekLine';
 
@@ -26,7 +26,7 @@ const AnimatedWeekLine = styled(WeekLine)`
   animation-fill-mode: forwards;
 `;
 
-const Loader = styled(SquareLoader)`
+const Loader = styled(ScaleLoader)`
   margin: 0 auto;
 `;
 
