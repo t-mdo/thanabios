@@ -30,7 +30,7 @@ const BirthdatePicker = ({ value, onChange }) => {
         <DatePicker
           dateFormat="YYYY/MM/DD"
           onChange={onChange}
-          placeholderText="Birthdate"
+          placeholderText="Birthdate: YYYY/MM/DD"
         />
       </DatePickerContainer>
     );
