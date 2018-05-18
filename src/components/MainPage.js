@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import CSummary from '../containers/CSummary';
+import CUserInfos from '../containers/CUserInfos';
+
 import Life from './Life';
 
 const MainPageContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   top: 0;
   left: 0;
   width: 100%;
@@ -15,24 +18,20 @@ const MainPageContainer = styled.div`
   overflow-y: hidden;
 `;
 
-const MainPage = ({ lifeSettingUp, lifeRequestFailed, lifeRequestError, weeks }) => (
+const MainPage = ({ weeks }) => (
   <MainPageContainer>
+    <CSummary />
     <Life
-      lifeSettingUp={lifeSettingUp}
-      lifeRequestFailed={lifeRequestFailed}
-      lifeRequestError={lifeRequestError}
       weeks={weeks}
       lineLength={52}
     />
+    <CUserInfos />
   </MainPageContainer>
 );
 
 MainPage.propTypes = {
   lifeExpectancy: PropTypes.number.isRequired,
   weeksPassed: PropTypes.number.isRequired,
-  lifeSettingUp: PropTypes.bool.isRequired,
-  lifeRequestFailed: PropTypes.bool.isRequired,
-  lifeRequestError: PropTypes.object.isRequired,
   weeks: PropTypes.array.isRequired,
 };
 

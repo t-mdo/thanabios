@@ -5,15 +5,18 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 
 import MainPage from '../components/MainPage';
+import Loading from '../components/Loading';
 
-const MainPageContainer = ({ lifeSettingUp, lifeRequestFailed, lifeRequestError, lifeExpectancy, weeksPassed }) => {
+const MainPageContainer = ({ lifeSettingUp, lifeExpectancy, weeksPassed }) => {
   const weeks = _.times(lifeExpectancy).map(i => ({ id: _.uniqueId('week:'), passed: (i <= weeksPassed) }));
 
+  if (lifeSettingUp) {
+    return (
+      <Loading />
+    );
+  }
   return (
     <MainPage
-      lifeSettingUp={lifeSettingUp}
-      lifeRequestFailed={lifeRequestFailed}
-      lifeRequestError={lifeRequestError}
       lifeExpectancy={lifeExpectancy}
       weeksPassed={weeksPassed}
       weeks={weeks}

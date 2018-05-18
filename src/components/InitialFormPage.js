@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Wrapper from './Wrapper';
-import Title from './Title';
+import StockWrapper from './Wrapper';
+import Title from './MainTitle';
 import InitialForm from './InitialForm';
 
 const WrapperContainer = styled.div`
@@ -12,6 +12,10 @@ const WrapperContainer = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
+`;
+
+const Wrapper = styled(StockWrapper)`
+  min-width: 600px;
 `;
 
 const InitialFormPage = ({ user, handleCountryChange, handleGenderChange, handleDateChange, handleSubmit }) => (
