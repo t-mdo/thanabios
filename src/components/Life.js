@@ -19,13 +19,10 @@ const AnimatedTitle = styled(Title)`
   animation: ${comeInDown};
 `;
 
-const Life = ({ lifeSettingUp, lifeRequestFailed, lifeRequestError, weeks }) => (
+const Life = ({ weeks }) => (
   <Wrapper margin="0 auto" height={100} width={40}>
     <AnimatedTitle>Your Life</AnimatedTitle>
     <WeekGrid
-      lifeSettingUp={lifeSettingUp}
-      lifeRequestFailed={lifeRequestFailed}
-      lifeRequestError={lifeRequestError}
       weeks={weeks}
       lineLength={52}
     />
@@ -35,9 +32,6 @@ const Life = ({ lifeSettingUp, lifeRequestFailed, lifeRequestError, weeks }) => 
 Life.defaultProps = {};
 
 Life.propTypes = {
-  lifeSettingUp: PropTypes.bool.isRequired,
-  lifeRequestFailed: PropTypes.bool.isRequired,
-  lifeRequestError: PropTypes.object.isRequired,
   weeks: PropTypes.array.isRequired,
 };
 

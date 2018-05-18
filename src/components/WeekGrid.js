@@ -4,8 +4,6 @@ import styled, { keyframes } from 'styled-components';
 
 import _ from 'lodash';
 
-import { ScaleLoader } from 'halogenium';
-
 import WeekLine from './WeekLine';
 
 const comeInUp = keyframes`
@@ -26,20 +24,8 @@ const AnimatedWeekLine = styled(WeekLine)`
   animation-fill-mode: forwards;
 `;
 
-const Loader = styled(ScaleLoader)`
-  margin: 0 auto;
-`;
-
-const WeekGrid = ({ className, weeks, lineLength, lifeSettingUp }) => {
+const WeekGrid = ({ className, weeks, lineLength }) => {
   const lines = _.chunk(weeks, lineLength).map((line, i) => <AnimatedWeekLine i={i} key={_.uniqueId('line:')} weeks={line} />);
-
-  if (lifeSettingUp) {
-    return (
-      <div className={className}>
-        <Loader color="#989898" loading={lifeSettingUp} />
-      </div>
-    );
-  }
 
   return (
     <div className={className}>
@@ -54,9 +40,6 @@ WeekGrid.propTypes = {
   className: PropTypes.string.isRequired,
   weeks: PropTypes.array.isRequired,
   lineLength: PropTypes.number.isRequired,
-  lifeSettingUp: PropTypes.bool.isRequired,
-  lifeRequestFailed: PropTypes.bool.isRequired,
-  lifeRequestError: PropTypes.object.isRequired,
 };
 
 export default styled(WeekGrid)`
