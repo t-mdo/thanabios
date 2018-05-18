@@ -8,50 +8,46 @@ import Title from './Title';
 import fadein from './KFFadein';
 
 const Text = styled.p`
+  margin: 0;
   font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
+  font-size: 2.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const TextValue = styled.p`
+  margin: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-style: italic;
+  text-align: center;
+  font-size: 2.1em;
   font-weight: bold;
-  text-align: center;
-  color: #989898;
-  font-size: 2.5em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0;
 `;
 
-const ReverseText = styled.p`
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: normal;
-  font-size: 2.5em;
-  text-align: center;
-  -webkit-text-fill-color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #989898;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-`;
-
-const Summary = ({ weeksAhead, weeksPassed }) => (
+const UserInfos = ({ birthString, countryString }) => (
   <Wrapper margin="0px 4% 0px 4%" width={20} height={50} animation={`${fadein} 13s`}>
-    <Title>Your Data</Title>
+    <Title>Your Information</Title>
     <div>
-      <Text>Lived Weeks</Text>
-      <Text>{weeksPassed}</Text>
+      <Text>Born on</Text>
+      <TextValue>{birthString}</TextValue>
     </div>
     <div>
-      <ReverseText>Weeks left to live</ReverseText>
-      <ReverseText>{weeksAhead}</ReverseText>
+      <Text>Lives in</Text>
+      <TextValue>{countryString}</TextValue>
     </div>
   </Wrapper>
 );
 
-Summary.defaultProps = {};
+UserInfos.defaultProps = {};
 
-Summary.propTypes = {
-  weeksAhead: PropTypes.number.isRequired,
-  weeksPassed: PropTypes.number.isRequired,
+UserInfos.propTypes = {
+  birthString: PropTypes.string.isRequired,
+  countryString: PropTypes.string.isRequired,
 };
 
-export default Summary;
+export default UserInfos;

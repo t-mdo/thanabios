@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Wrapper from './Wrapper';
-import Title from './Title';
+import Title from './MainTitle';
 import InitialForm from './InitialForm';
 
 const WrapperContainer = styled.div`

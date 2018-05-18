@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import CSummary from '../containers/CSummary';
+import CUserInfos from '../containers/CUserInfos';
 
 import Life from './Life';
 
@@ -24,7 +25,7 @@ const MainPage = ({ weeks }) => (
       weeks={weeks}
       lineLength={52}
     />
-    <CSummary />
+    <CUserInfos />
   </MainPageContainer>
 );
 

@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-const Title = styled.h3`
+const MainTitle = styled.h2`
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: normal;
-  margin: 0 0 30px 0;
+  font-size: 5em;
   text-align: center;
-  font-size: 3em;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  margin: 0 0;
 `;
 
-export default Title;
+export default MainTitle;

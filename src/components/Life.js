@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 
 import Wrapper from '../components/Wrapper';
 import WeekGrid from '../components/WeekGrid';
-import Title from '../components/Title';
+import Title from '../components/MainTitle';
 
 const comeInDown = keyframes`
   0% {
