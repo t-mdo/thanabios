@@ -18,7 +18,7 @@ const Wrapper = styled(StockWrapper)`
   min-width: 600px;
 `;
 
-const InitialFormPage = ({ user, handleChange, handleSubmit }) => (
+const InitialFormPage = ({ user, handleChange, handleSubmit, errors }) => (
   <WrapperContainer>
     <Wrapper margin="0 auto" height={60} width={60} >
       <Title>You</Title>
@@ -26,6 +26,7 @@ const InitialFormPage = ({ user, handleChange, handleSubmit }) => (
         user={user}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        errors={errors}
       />
     </Wrapper>
   </WrapperContainer>
@@ -35,6 +36,7 @@ InitialFormPage.propTypes = {
   user: PropTypes.shape({ birthdate: PropTypes.object }).isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  errors: PropTypes.shape({ birthdateError: PropTypes.bool, genderError: PropTypes.bool, countryError: PropTypes.bool }).isRequired,
 };
 
 export default InitialFormPage;

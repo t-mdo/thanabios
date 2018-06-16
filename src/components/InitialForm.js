@@ -17,11 +17,11 @@ const Button = styled(AwesomeButton)`
   margin: 0 auto !important;
 `;
 
-const InitialForm = ({ className, user, handleChange, handleSubmit }) => (
+const InitialForm = ({ className, user, handleChange, handleSubmit, errors }) => (
   <div className={className}>
-    <GenderSelect value={user.gender} onChange={handleChange} />
-    <CountrySelect value={user.country} onChange={handleChange} />
-    <BirthdatePicker value={user.birthdate} onChange={handleChange} />
+    <GenderSelect value={user.gender} onChange={handleChange} denied={errors.genderError} />
+    <CountrySelect value={user.country} onChange={handleChange} denied={errors.countryError} />
+    <BirthdatePicker value={user.birthdate} onChange={handleChange} denied={errors.birthdateError} />
     <Button action={handleSubmit} type="secondary" size="large">Check It Out</Button>
   </div>
 );
@@ -30,9 +30,10 @@ InitialForm.defaultProps = {};
 
 InitialForm.propTypes = {
   className: PropTypes.string.isRequired,
-  user: PropTypes.shape({ birthdate: PropTypes.object }).isRequired,
+  user: PropTypes.shape({ birthdate: PropTypes.object, gender: PropTypes.string, country: PropTypes.string }).isRequired,
   handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
+  errors: PropTypes.shape({ birthdateError: PropTypes.bool, genderError: PropTypes.bool, countryError: PropTypes.bool }).isRequired,
 };
 
 export default styled(InitialForm)`

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Select = styled.select`
   font-size: 25px;
   border-radius: 4px;
-  border: 1px solid #aeaeae;
+  border: 1px solid ${({ denied }) => denied ? '#ff0000' : '#aeaeae'};
   padding: 12px 20px 10px;
   margin: 0 auto;
   text-align: center;
@@ -17,8 +17,8 @@ const Select = styled.select`
   }
 `;
 
-const GenderSelect = ({ onChange, value }) => (
-  <Select name="gender" value={value} onChange={e => onChange(e.target)}>
+const GenderSelect = ({ onChange, value, denied }) => (
+  <Select name="gender" value={value} onChange={e => onChange(e.target)} denied={denied}>
     <option value="" disabled>Gender</option>
     <option value="female">Female</option>
     <option value="male">Male</option>
@@ -28,11 +28,13 @@ const GenderSelect = ({ onChange, value }) => (
 GenderSelect.defaultProps = {
   onChange: undefined,
   value: '',
+  denied: false,
 };
 
 GenderSelect.propTypes = {
   onChange: PropTypes.func,
   value: PropTypes.string,
+  denied: PropTypes.bool,
 };
 
 export default GenderSelect;

@@ -10,30 +10,46 @@ import InitialFormPage from '../components/InitialFormPage';
 import { setupUser as setupUserThunk } from '../actions/user';
 import { setupLife as setupLifeThunk } from '../actions/life';
 
-const InitialFormPageContainer = ({ user, setupUser, setupLife, history }) => {
-  const handleChange = ({ name, value }) => setupUser({ ...user, [name]: value });
+// = ({ user, setupUser, setupLife, history }) => {
 
-  const handleSubmit = () => {
-    if (user.birthdate === null
-      || user.gender === ''
-      || user.country === '') {
-      return;
-    }
-    setupLife(user);
-    history.push('/life');
-  };
+class InitialFormPageContainer extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      birthdateError: false,
+      genderError: false,
+      countryError: false,
+    };
+  }
+  render() {
+    const handleChange = ({ name, value }) => this.props.setupUser({ ...this.props.user, [name]: value });
 
-  return (
-    <InitialFormPage
-      user={user}
-      handleChange={handleChange}
-      handleSubmit={handleSubmit}
-    />
-  );
-};
+    const handleSubmit = async () => {
+      await this.setState({
+        ...this.state,
+        birthdateError: (this.props.user.birthdate === null),
+        genderError: (this.props.user.gender === ''),
+        countryError: (this.props.user.country === ''),
+      });
+      if (!this.state.birthdateError && !this.state.genderError && !this.state.countryError) {
+        this.props.setupLife(this.props.user);
+        this.props.history.push('/life');
+      }
+    };
+
+    return (
+      <InitialFormPage
+        user={this.props.user}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        errors={this.state}
+      />
+    );
+  }
+}
 
 InitialFormPageContainer.propTypes = {
-  user: PropTypes.shape({ birthdate: PropTypes.object }).isRequired,
+  user: PropTypes.shape({ birthdate: PropTypes.object, gender: PropTypes.string, country: PropTypes.string }).isRequired,
   setupUser: PropTypes.func.isRequired,
   setupLife: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,

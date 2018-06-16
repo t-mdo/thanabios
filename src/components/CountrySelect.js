@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const Select = styled.select`
   font-size: 25px;
   border-radius: 4px;
-  border: 1px solid #aeaeae;
+  border: 1px solid ${({ denied }) => denied ? '#ff0000' : '#aeaeae'};
   padding: 12px 20px 10px;
   margin: 0 auto;
   text-align: center;
@@ -17,8 +17,8 @@ const Select = styled.select`
   }
 `;
 
-const CountrySelect = ({ className, onChange, value }) => (
-  <Select name="country" value={value} onChange={e => onChange(e.target)} className={className}>
+const CountrySelect = ({ className, onChange, value, denied }) => (
+  <Select denied={denied} name="country" value={value} onChange={e => onChange(e.target)} className={className}>
     <option value="" disabled>Country</option>
     <option value="Afghanistan">Afghanistan</option>
     <option value="Åland Islands">Åland Islands</option>
@@ -276,12 +276,14 @@ CountrySelect.defaultProps = {
   className: '',
   onChange: undefined,
   value: '',
+  denied: false,
 };
 
 CountrySelect.propTypes = {
   className: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.string,
+  denied: PropTypes.bool,
 };
 
 export default CountrySelect;

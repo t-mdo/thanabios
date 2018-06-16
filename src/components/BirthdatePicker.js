@@ -9,7 +9,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 const DatePicker = styled(DatePickerStock)`
   font-size: 25px;
   border-radius: 4px;
-  border: 1px solid #aeaeae;
+  border: 1px solid ${({ denied }) => denied ? '#ff0000' : '#aeaeae'};
   padding: 12px 20px 10px;
   text-align: center;
 
@@ -23,7 +23,7 @@ const DatePickerContainer = styled.div`
   margin: 0 auto;
 `;
 
-const BirthdatePicker = ({ value, onChange }) => {
+const BirthdatePicker = ({ value, onChange, denied }) => {
   const onDateChange = date => onChange({ name: 'birthdate', value: date });
 
   if (value === null) {
@@ -33,6 +33,7 @@ const BirthdatePicker = ({ value, onChange }) => {
           dateFormat="YYYY/MM/DD"
           onChange={onDateChange}
           placeholderText="Birthdate: YYYY/MM/DD"
+          denied={denied}
         />
       </DatePickerContainer>
     );
@@ -44,6 +45,7 @@ const BirthdatePicker = ({ value, onChange }) => {
         dateFormat="YYYY/MM/DD"
         selected={value}
         onChange={onDateChange}
+        denied={denied}
       />
     </DatePickerContainer>
   );
@@ -51,11 +53,13 @@ const BirthdatePicker = ({ value, onChange }) => {
 
 BirthdatePicker.defaultProps = {
   value: null,
+  denied: false,
 };
 
 BirthdatePicker.propTypes = {
   value: PropTypes.object,
   onChange: PropTypes.func.isRequired,
+  denied: PropTypes.bool,
 };
 
 export default BirthdatePicker;
