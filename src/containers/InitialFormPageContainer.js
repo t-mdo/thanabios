@@ -11,11 +11,7 @@ import { setupUser as setupUserThunk } from '../actions/user';
 import { setupLife as setupLifeThunk } from '../actions/life';
 
 const InitialFormPageContainer = ({ user, setupUser, setupLife, history }) => {
-  const handleDateChange = birthdate => setupUser({ ...user, birthdate });
-
-  const handleCountryChange = country => setupUser({ ...user, country: country.target.value });
-
-  const handleGenderChange = gender => setupUser({ ...user, gender: gender.target.value });
+  const handleChange = ({ name, value }) => setupUser({ ...user, [name]: value });
 
   const handleSubmit = () => {
     if (user.birthdate === null
@@ -30,9 +26,7 @@ const InitialFormPageContainer = ({ user, setupUser, setupLife, history }) => {
   return (
     <InitialFormPage
       user={user}
-      handleDateChange={handleDateChange}
-      handleCountryChange={handleCountryChange}
-      handleGenderChange={handleGenderChange}
+      handleChange={handleChange}
       handleSubmit={handleSubmit}
     />
   );

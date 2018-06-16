@@ -17,11 +17,11 @@ const Button = styled(AwesomeButton)`
   margin: 0 auto !important;
 `;
 
-const InitialForm = ({ className, user, handleGenderChange, handleCountryChange, handleDateChange, handleSubmit }) => (
+const InitialForm = ({ className, user, handleChange, handleSubmit }) => (
   <div className={className}>
-    <GenderSelect value={user.gender} onChange={handleGenderChange} />
-    <CountrySelect value={user.country} onChange={handleCountryChange} />
-    <BirthdatePicker value={user.birthdate} onChange={handleDateChange} />
+    <GenderSelect value={user.gender} onChange={handleChange} />
+    <CountrySelect value={user.country} onChange={handleChange} />
+    <BirthdatePicker value={user.birthdate} onChange={handleChange} />
     <Button action={handleSubmit} type="secondary" size="large">Check It Out</Button>
   </div>
 );
@@ -31,9 +31,7 @@ InitialForm.defaultProps = {};
 InitialForm.propTypes = {
   className: PropTypes.string.isRequired,
   user: PropTypes.shape({ birthdate: PropTypes.object }).isRequired,
-  handleCountryChange: PropTypes.func.isRequired,
-  handleDateChange: PropTypes.func.isRequired,
-  handleGenderChange: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
 };
 

@@ -18,7 +18,7 @@ const Select = styled.select`
 `;
 
 const GenderSelect = ({ onChange, value }) => (
-  <Select value={value} onChange={onChange}>
+  <Select name="gender" value={value} onChange={e => onChange(e.target)}>
     <option value="" disabled>Gender</option>
     <option value="female">Female</option>
     <option value="male">Male</option>

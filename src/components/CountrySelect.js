@@ -18,7 +18,7 @@ const Select = styled.select`
 `;
 
 const CountrySelect = ({ className, onChange, value }) => (
-  <Select value={value} onChange={onChange} className={className}>
+  <Select name="country" value={value} onChange={e => onChange(e.target)} className={className}>
     <option value="" disabled>Country</option>
     <option value="Afghanistan">Afghanistan</option>
     <option value="Åland Islands">Åland Islands</option>

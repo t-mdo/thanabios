@@ -24,12 +24,14 @@ const DatePickerContainer = styled.div`
 `;
 
 const BirthdatePicker = ({ value, onChange }) => {
+  const onDateChange = date => onChange({ name: 'birthdate', value: date });
+
   if (value === null) {
     return (
       <DatePickerContainer>
         <DatePicker
           dateFormat="YYYY/MM/DD"
-          onChange={onChange}
+          onChange={onDateChange}
           placeholderText="Birthdate: YYYY/MM/DD"
         />
       </DatePickerContainer>
@@ -41,7 +43,7 @@ const BirthdatePicker = ({ value, onChange }) => {
       <DatePicker
         dateFormat="YYYY/MM/DD"
         selected={value}
-        onChange={onChange}
+        onChange={onDateChange}
       />
     </DatePickerContainer>
   );
