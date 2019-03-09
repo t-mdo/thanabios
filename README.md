@@ -1,4 +1,4 @@
-# Life In Weeks
+# Thanabios
 
 ### Gives a quick visualisation of the time you have spent and the time you have left.
-Accessible on http://lifeinweeks.me
+Accessible on http://thanabios.com
