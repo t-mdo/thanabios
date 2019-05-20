@@ -1,7 +1,7 @@
 import axios from 'axios';
 import moment from 'moment';
 
-const API_URL = 'http://api.population.io/1.0/';
+const API_URL = 'https://d6wn6bmjj722w.cloudfront.net/1.0/';
 
 export const LIFE_SETTING_UP = 'LIFE_SETTING_UP';
 export const LIFE_EXPECTANCY_FETCH_REQUEST = 'LIFE_EXPECTANCY_FETCH_REQUEST';
